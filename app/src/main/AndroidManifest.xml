@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="barqsoft.footballscores" >
+
+    <!--Remove maxSdkVersion from INTERNET permission -->
+    <uses-permission
+        android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".database.ScoresProvider"
+            android:authorities="barqsoft.footballscores"
+            android:exported="false"/>
+
+        <receiver
+            android:name=".widget.ScoresWidgetProvider"
+            android:enabled="true"
+            android:label="@string/scores_text">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="barqsoft.footballscores.BROADCAST_SCORES_UPDATED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_scores_provider" />
+        </receiver>
+
+        <service android:name=".service.ScoresFetchService" />
+
+        <service
+            android:name=".widget.ScoresRemoteViewsService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <activity
+            android:name=".activities.AboutActivity"
+            android:label="About"
+            android:parentActivityName=".activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
+
+    </application>
+
+</manifest>
