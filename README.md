@@ -4,7 +4,9 @@ mo
 
 ## Synopsis
 
-This repository contains FootballScores, an app for viewing football match scores and listing upcoming games.  The original version of the app was provided by Udacity as part of Project #3.  I made considerable modifications to fix bugs, port components to Material widgets, add a home screen widget, and incorporate accessibility features.  In addition, I translated the app into Spanish to demonstrate internationalization.     
+![Football scores icon](https://github.com/jheske/FootballScores/blob/master/app/src/main/res/drawable-xhdpi/ic_launcher.png?raw=true)
+
+This repository contains **FootballScores**, an app for viewing football match scores and listing upcoming games.  The original version of the app was provided by Udacity as part of Project #3.  I made considerable modifications to fix bugs, port most components to Material AppCompat library widgets, add a home screen widget, and incorporate accessibility features.  In addition, I translated the app into Spanish to demonstrate internationalization.     
 
 
 ## Features
@@ -13,7 +15,7 @@ This project is designed to meet all of the requirements as per Udacity's rubric
 
 Tabbed layout on home page allows user to view scores for past games and dates and times for upcoming games. 
 
-Now uses latest Material widgets for most components, including Toolbar, TabLayout, ViewPager, RecyclerView, and Cardview.
+Now uses Google's latest Material AppCompat and Design library widgets for most components, including Toolbar, TabLayout, ViewPager, RecyclerView, and Cardview.
 
 Uses a SQLite database and a ContentProvider for storing and retrieving scores.
 
@@ -46,7 +48,6 @@ http://www.iconarchive.com/show/button-ui-requests-2-icons-by-blackvariant/Popco
 This project has been tested on:
 
 * Samsung Tab 4 running Android 4.4.2
-* Huawei Prism running Android 2.3
 * LG Optimus L90 running Android 4.4.2
 * GenyMotion emulator running Android 5.1
 
